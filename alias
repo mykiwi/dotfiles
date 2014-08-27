@@ -1,0 +1,35 @@
+#!/bin/sh
+
+#git
+alias gs='git st'
+alias gl='git lg'
+alias gd='git diff'
+alias gdc='git diff --cached'
+
+#ls
+alias ls='ls -FG'
+alias l='ls'
+alias ll='ls -l'
+alias lll='ll'
+alias la='ls -a'
+alias lla='ll -a'
+
+# usefull
+alias sf="app/console"
+alias mysql="mysql --default-character-set=utf8"
+
+alias clean="
+echo -e '\033[31m*~\033[0m';
+find . -name '*~' -delete -print;
+echo -e '\033[31m#*#\033[0m';
+find . -name '#*#' -delete -print;
+echo -e '\033[31m.DS_Store\033[0m';
+find . -name '.DS_Store' -delete -print;
+find . -name '._*' -delete -print;
+echo -e '\033[32mdone\033[0m'
+"
+
+alias p='ping 8.8.8.8'
+alias start-mailcatcher='mailcatcher --http-ip=0.0.0.0'
+alias start-mysql='mysql.server start'
+alias start-pgsql='postgres -D /usr/local/var/postgres'
