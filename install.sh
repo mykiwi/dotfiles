@@ -15,5 +15,6 @@ source \$DOTFILES/.zshrc" > ~/.zshrc
 
 # Created symlink for gitconfig
 ln -sf $DOTFILES/.gitconfig ~/.gitconfig
+ln -sf $DOTFILES/.global_gitignore ~/.global_gitignore
 
 echo Done

@@ -26,13 +26,13 @@
     interactive     = auto
 
 [core]
-	autocrlf        = input
+    autocrlf        = input
     pager           = less
-	excludesfile    = ~/.gitignore
+    excludesfile    = ~/.global_gitignore
 
 [include]
     path            = ~/.private-gitconfig
 [push]
-	default         = current
+    default         = current
 [pull]
-	default         = current
+    default         = current
