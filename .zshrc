@@ -13,5 +13,6 @@ plugins=(git)
 setopt rmstarsilent
 
 source $ZSH/oh-my-zsh.sh
+source $DOTFILES/alias
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
