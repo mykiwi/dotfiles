@@ -9,7 +9,7 @@ git submodule update --init
 ln -sf $ROOT/zsh/pure/pure.zsh $ROOT/zsh/oh-my-zsh/custom/pure.zsh-theme
 
 # Created .zshrc
-echo "# github.com/mykiwi/dotfiles
+echo "# github.com/romqin/dotfiles
 export DOTFILES=$ROOT
 source \$DOTFILES/.zshrc" > ~/.zshrc
 
