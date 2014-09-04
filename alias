@@ -17,7 +17,7 @@ alias lla='ll -a'
 # usefull
 alias sf="app/console"
 alias mysql="mysql --default-character-set=utf8"
-
+alias fuck="sudo $(fc -ln -1)" 
 alias clean="
 echo -e '\033[31m*~\033[0m';
 find . -name '*~' -delete -print;
