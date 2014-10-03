@@ -15,4 +15,6 @@ setopt rmstarsilent
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/alias
 
+setopt APPEND_HISTORY
+
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
