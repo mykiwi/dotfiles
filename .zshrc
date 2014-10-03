@@ -14,6 +14,7 @@ setopt rmstarsilent
 
 source $ZSH/oh-my-zsh.sh
 source $DOTFILES/alias
+source $DOTFILES/.private_env
 
 setopt APPEND_HISTORY
 
