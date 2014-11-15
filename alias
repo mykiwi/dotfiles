@@ -1,6 +1,7 @@
 #!/bin/sh
 
 #git
+alias git='hub'
 alias gs='git st'
 alias gl='git lg'
 alias gd='git diff'
