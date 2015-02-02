@@ -15,8 +15,12 @@ alias lll='ll'
 alias la='ls -a'
 alias lla='ll -a'
 
+#symfony
+alias sf="php app/console"
+alias prod="php app/console --env=prod"
+alias dev="php app/console --env=dev"
+
 # usefull
-alias sf="app/console"
 alias mysql="mysql --default-character-set=utf8"
 alias fuck='sudo $(fc -ln -1)'
 alias clean="
