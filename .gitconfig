@@ -3,7 +3,7 @@
     email           = mail@romain.sh
 
 [github]
-    user            = romqin
+    user            = mykiwi
 
 [alias]
     st              = status
@@ -17,6 +17,9 @@
     uncommithard    = reset --hard HEAD^
     undomerge       = reset --hard ORIG_HEAD
     oups            = commit --amend -C HEAD
+    cancel          = reset --soft HEAD~
+    lint            = ! git status --porcelain | /bin/grep -e '^[AUM ][UM ].*\\.php$' | awk '{print $2}' | xargs --no-run-if-empty -L 1 php -l
+    php-cs-fixer    = ! git status --porcelain | /bin/grep -e '^[AUM ][UM ].*\\.php$' | awk '{print $2}' | xargs --no-run-if-empty -L 1 php $(which php-cs-fixer) fix --quiet --rules=@Symfony
 
 [color]
     ui              = always
@@ -32,6 +35,8 @@
 
 [include]
     path            = ~/.private-gitconfig
+[init]
+    templatedir     = ${DOTFILES}/git-template
 [push]
     default         = current
 [pull]

@@ -1,21 +1,35 @@
-export UPDATE_ZSH_DAYS=42
+DOTFILES=$HOME/.dotfiles
+EXPORT DOTFILES $DOTFILES
+source $DOTFILES/antigen/antigen.zsh
 
-ZSH=$DOTFILES/zsh/oh-my-zsh
-ZSH_THEME="pure"
-PURE_CMD_MAX_EXEC_TIME=2
-CASE_SENSITIVE="true"
-DISABLE_AUTO_UPDATE="true"
-DISABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
-HIST_STAMPS="dd/mm/yyyy"
+antigen bundle robbyrussell/oh-my-zsh lib/
 
-plugins=(git)
-setopt rmstarsilent
+antigen theme pure
 
-source $ZSH/oh-my-zsh.sh
-source $DOTFILES/alias
-source $DOTFILES/.private_env
+antigen bundle git
+antigen bundle docker
+antigen bundle github
+antigen bundle go
+antigen bundle symfony2
+antigen bundle z                            # autojump
+antigen bundle colored-man-pages            # adds colors to manpages
+antigen bundle colorize                     # cat with syntax highlight support
+antigen bundle cp                           # cp with progress bar
 
-setopt APPEND_HISTORY
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+
+if [[ $CURRENT_OS == 'OS X' ]]; then
+    antigen-bundle osx
+elif [[ $CURRENT_OS == 'Linux' ]]; then
+    if [[ $DISTRO == 'Archlinux' ]]; then
+        antigen bundle archlinux
+    elif [[ $DISTRO == 'CentOS' ]]; then
+        antigen bundle centos
+    fi
+fi
+
+antigen-apply

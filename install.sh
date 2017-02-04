@@ -1,20 +1,6 @@
 #!/bin/bash
 
-ROOT="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# Install oh-my-zsh + pure
-git submodule update --init
-
-# Enable pure for oh-my-zsh
-ln -sf $ROOT/zsh/pure/pure.zsh $ROOT/zsh/oh-my-zsh/custom/pure.zsh-theme
-
-# Created .zshrc
-echo "# github.com/romqin/dotfiles
-export DOTFILES=$ROOT
-source \$DOTFILES/.zshrc" > ~/.zshrc
-
-# Created symlink for gitconfig
-ln -sf $ROOT/.gitconfig ~/.gitconfig
-ln -sf $ROOT/.global_gitignore ~/.global_gitignore
-
-echo Done
+find . -maxdepth 1 -type f \( -name ".*" ! -iname ".git" ! -iname ".gitignore" ! -iname ".gitmodules" -print0 \) | while IFS= read -r -d $'\0' f; do
+    file=`echo $f | cut -c 3-`
+    ln -s `pwd`/$file ~/$file
+done

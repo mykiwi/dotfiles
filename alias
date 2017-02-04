@@ -1,7 +1,12 @@
 #!/bin/sh
 
 #git
-alias git='hub'
+hub_path=$(which hub)
+if (( $+commands[hub] ))
+then
+  alias git=$hub_path
+fi
+
 alias gs='git st'
 alias gl='git lg'
 alias gd='git diff'
@@ -16,25 +21,22 @@ alias la='ls -a'
 alias lla='ll -a'
 
 #symfony
-alias sf="php app/console"
-alias prod="php app/console --env=prod"
-alias dev="php app/console --env=dev"
+alias prod="sf --env=prod"
+alias dev="sf --env=dev"
 
 # usefull
+alias fig=docker-compose
 alias mysql="mysql --default-character-set=utf8"
 alias fuck='sudo $(fc -ln -1)'
 alias clean="
-echo -e '\033[31m*~\033[0m';
-find . -name '*~' -delete -print;
-echo -e '\033[31m#*#\033[0m';
-find . -name '#*#' -delete -print;
-echo -e '\033[31m.DS_Store\033[0m';
-find . -name '.DS_Store' -delete -print;
-find . -name '._*' -delete -print;
-echo -e '\033[32mdone\033[0m'
+    echo -e '\033[31m*~\033[0m';
+    find . -name '*~' -delete -print;
+    echo -e '\033[31m#*#\033[0m';
+    find . -name '#*#' -delete -print;
+    echo -e '\033[31m.DS_Store\033[0m';
+    find . -name '.DS_Store' -delete -print;
+    find . -name '._*' -delete -print;
+    echo -e '\033[32mdone\033[0m'
 "
 
 alias p='ping 8.8.8.8'
-alias start-mailcatcher='mailcatcher --http-ip=0.0.0.0'
-alias start-mysql='mysql.server start'
-alias start-pgsql='postgres -D /usr/local/var/postgres'
