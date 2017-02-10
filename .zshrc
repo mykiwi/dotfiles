@@ -1,11 +1,6 @@
-DOTFILES=$HOME/.dotfiles
-EXPORT DOTFILES $DOTFILES
-source $DOTFILES/antigen/antigen.zsh
+source $HOME/.dotfiles/antigen/antigen.zsh
 
 antigen bundle robbyrussell/oh-my-zsh lib/
-
-antigen theme pure
-
 antigen bundle git
 antigen bundle docker
 antigen bundle github
@@ -21,6 +16,7 @@ antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
+antigen theme pure
 
 if [[ $CURRENT_OS == 'OS X' ]]; then
     antigen-bundle osx
@@ -33,3 +29,4 @@ elif [[ $CURRENT_OS == 'Linux' ]]; then
 fi
 
 antigen-apply
+source ~/.dotfiles/alias
