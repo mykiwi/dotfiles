@@ -7,6 +7,7 @@ antigen bundle github
 antigen bundle go
 antigen bundle symfony2
 antigen bundle z                            # autojump
+antigen bundle andrewferrier/fzf-z
 antigen bundle colored-man-pages            # adds colors to manpages
 antigen bundle colorize                     # cat with syntax highlight support
 antigen bundle cp                           # cp with progress bar
@@ -30,3 +31,7 @@ fi
 
 antigen-apply
 source ~/.dotfiles/alias
+
+# Platform.sh CLI
+export PATH='/home/mykiwi/.platformsh/bin':$PATH
+source '/home/mykiwi/.platformsh/shell-config.rc' 2>/dev/null

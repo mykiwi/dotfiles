@@ -5,6 +5,11 @@
 [github]
     user            = mykiwi
 
+[includeIf "gitdir:~/dev/github/sensiolabs/"]
+    path = .gitconfig-work
+[includeIf "gitdir:~/dev/gitlab.wynd.eu/"]
+    path = .gitconfig-work
+
 [alias]
     st              = status
     ci              = commit -v
@@ -41,3 +46,8 @@
     default         = current
 [pull]
     default         = current
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
