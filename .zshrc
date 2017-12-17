@@ -35,3 +35,5 @@ source ~/.dotfiles/alias
 # Platform.sh CLI
 export PATH='/home/mykiwi/.platformsh/bin':$PATH
 source '/home/mykiwi/.platformsh/shell-config.rc' 2>/dev/null
+
+return 0
