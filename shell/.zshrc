@@ -1,4 +1,4 @@
-source $HOME/.dotfiles/antigen/antigen.zsh
+source $HOME/.dotfiles/shell/antigen/antigen.zsh
 
 antigen bundle robbyrussell/oh-my-zsh lib/
 antigen bundle git
@@ -29,11 +29,6 @@ elif [[ $CURRENT_OS == 'Linux' ]]; then
     fi
 fi
 
-antigen-apply
-source ~/.dotfiles/alias
+antigen apply
 
-# Platform.sh CLI
-export PATH='/home/mykiwi/.platformsh/bin':$PATH
-source '/home/mykiwi/.platformsh/shell-config.rc' 2>/dev/null
-
-return 0
+source ~/.dotfiles/shell/alias
