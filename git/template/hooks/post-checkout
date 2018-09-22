@@ -1,39 +1,37 @@
 #!/bin/bash
 
-# remplace by print
-
 PREV_COMMIT=$1
 POST_COMMIT=$2
 
 if [[ '0000000000000000000000000000000000000000' == ${PREV_COMMIT} ]] ; then exit 0; fi
 
 NOCOLOR='\e[0m'
-{REDCOLOR}'\e[37;41m'
+REDCOLOR='\e[37;41m'
 
 if [[ -f composer.lock ]]; then
     DIFF=`git diff --shortstat ${PREV_COMMIT}..${POST_COMMIT} composer.lock`
     if [[ $DIFF != "" ]]; then
-        echo "${REDCOLOR}composer.lock has changed. You must run composer install${NOCOLOR}"
+        printf "${REDCOLOR}composer.lock has changed. You must run composer install${NOCOLOR}\n"
     fi
 fi
 
 if [[ -f package.json ]]; then
     DIFF=`git diff --shortstat ${PREV_COMMIT}..${POST_COMMIT} package.json`
     if [[ $DIFF != "" ]]; then
-        echo "${REDCOLOR}package.json has changed. You must run npm install${NOCOLOR}"
+        printf "${REDCOLOR}package.json has changed. You must run npm install${NOCOLOR}\n"
     fi
 fi
 
 if [[ -f yarn.lock ]]; then
     DIFF=`git diff --shortstat ${PREV_COMMIT}..${POST_COMMIT} yarn.lock`
     if [[ $DIFF != "" ]]; then
-        echo "${REDCOLOR}yarn.lock has changed. You must run yarn${NOCOLOR}"
+        printf "${REDCOLOR}yarn.lock has changed. You must run yarn${NOCOLOR}\n"
     fi
 fi
 
 if [[ -f chef/Cheffile.lock ]]; then
     DIFF=`git diff --shortstat ${PREV_COMMIT}..${POST_COMMIT} chef/Cheffile.lock`
     if [[ $DIFF != "" ]]; then
-        echo "${REDCOLOR}chef/Cheffile.lock has changed. You must run librarian-chef install${NOCOLOR}"
+        printf "${REDCOLOR}chef/Cheffile.lock has changed. You must run librarian-chef install${NOCOLOR}\n"
     fi
 fi
