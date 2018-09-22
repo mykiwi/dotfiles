@@ -5,11 +5,6 @@
 [github]
     user            = mykiwi
 
-[includeIf "gitdir:~/dev/github/sensiolabs/"]
-    path = ~/.dotfiles/git/private/sensiolabs
-[includeIf "gitdir:~/dev/github/GensDeConfiance/"]
-    path = ~/.dotfiles/git/private/gensdeconfiance
-
 [alias]
     st              = status
     ci              = commit -v
@@ -40,7 +35,7 @@
     excludesfile    = ~/.dotfiles/git/.global_gitignore
 
 [include]
-    path            = ~/.private-gitconfig
+    path            = ~/.gitconfig-private
 [init]
     templatedir     = ~/.dotfiles/git/template
 [push]
