@@ -23,6 +23,7 @@
     undomerge       = reset --hard ORIG_HEAD
     oups            = commit --amend -C HEAD
     cancel          = reset --soft HEAD~
+    sync            = pull --rebase --autostash
     lint            = ! git status --porcelain | /bin/grep -e '^[AUM ][UM ].*\\.php$' | awk '{print $2}' | xargs --no-run-if-empty -L 1 php -l
     php-cs-fixer    = ! git status --porcelain | /bin/grep -e '^[AUM ][UM ].*\\.php$' | awk '{print $2}' | xargs --no-run-if-empty -L 1 php $(which php-cs-fixer) fix --quiet --rules=@Symfony
 
