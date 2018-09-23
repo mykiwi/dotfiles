@@ -31,4 +31,7 @@ fi
 
 antigen apply
 
-source ~/.dotfiles/shell/alias
+source ~/.dotfiles/shell/.alias
+if [ -f ~/.alias-private ]; then
+    source ~/.alias-private
+fi
