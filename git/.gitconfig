@@ -5,11 +5,6 @@
 [github]
     user            = mykiwi
 
-[includeIf "gitdir:~/dev/github/sensiolabs/"]
-    path = .gitconfig-work
-[includeIf "gitdir:~/dev/gitlab.wynd.eu/"]
-    path = .gitconfig-work
-
 [alias]
     st              = status
     ci              = commit -v
@@ -23,6 +18,7 @@
     undomerge       = reset --hard ORIG_HEAD
     oups            = commit --amend -C HEAD
     cancel          = reset --soft HEAD~
+    sync            = pull --rebase --autostash
     lint            = ! git status --porcelain | /bin/grep -e '^[AUM ][UM ].*\\.php$' | awk '{print $2}' | xargs --no-run-if-empty -L 1 php -l
     php-cs-fixer    = ! git status --porcelain | /bin/grep -e '^[AUM ][UM ].*\\.php$' | awk '{print $2}' | xargs --no-run-if-empty -L 1 php $(which php-cs-fixer) fix --quiet --rules=@Symfony
 
@@ -36,12 +32,12 @@
 [core]
     autocrlf        = input
     pager           = less
-    excludesfile    = ~/.global_gitignore
+    excludesfile    = ~/.dotfiles/git/.global_gitignore
 
 [include]
-    path            = ~/.private-gitconfig
+    path            = ~/.gitconfig-private
 [init]
-    templatedir     = ${DOTFILES}/git-template
+    templatedir     = ~/.dotfiles/git/template
 [push]
     default         = current
 [pull]
@@ -51,3 +47,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[pager]
+	branch = false
+
+[branch]
+	autosetupmerge = always
