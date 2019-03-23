@@ -50,3 +50,5 @@
 [pager]
 	branch = false
 
+[branch]
+	autosetupmerge = always
