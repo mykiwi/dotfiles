@@ -2,13 +2,12 @@
 
 ```bash
 mkdir -p ~/dev/github.com/mykiwi
+
 git clone --recursive git@github.com:mykiwi/dotfiles.git ~/dev/github.com/mykiwi/dotfiles
 ~/dev/github.com/mykiwi/dotfiles/install.sh
 
-# Private stuff
-mkdir -p ~/dev/gitlab.com/mykiwi
-git clone git@gitlab.com:mykiwi/private-dotfiles.git ~/dev/gitlab.com/mykiwi/private-dotfiles
-~/dev/gitlab.com/mykiwi/private-dotfiles/install.sh
+git clone --recursive git@github.com:mykiwi/dotfiles.private.git ~/dev/github.com/mykiwi/dotfiles.private
+~/dev/github.com/mykiwi/dotfiles.private/install.sh
 ```
 
 ## DuckDuckGo
