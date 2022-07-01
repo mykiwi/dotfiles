@@ -153,13 +153,7 @@
         ctrlp = {
           description = "Launch Neovim file finder from the shell";
           argumentNames = "hidden";
-          body = ''
-            if test -n "$hidden"
-              nvim -c 'lua require(\'telescope.builtin\').find_files({hidden = true})'
-            else
-              nvim -c 'lua require(\'telescope.builtin\').find_files()'
-            end
-          '';
+          body = "";
         };
         fish_greeting = {
           description = "Greeting to show when starting a fish shell";
@@ -169,7 +163,6 @@
           description = "Set custom key bindings";
           body = ''
             bind \cp ctrlp
-            bind \cl 'ctrlp --hidden'
           '';
         };
         mkdcd = {
@@ -218,7 +211,7 @@
         options = {
           navigate = true;
           line-numbers = true;
-          syntax-theme = "GitHub";
+          syntax-theme = "dark";
         };
       };
       extraConfig = {
