@@ -8,4 +8,4 @@ nix-channel --update
 nix-shell '<home-manager>' -A install
 home-manager switch
 
-sudo chsh $USER -s `which fish`
+(echo "exec fish" && cat ~/.bashrc) > ~/.bashrc1 && mv ~/.bashrc1 ~/.bashrc
