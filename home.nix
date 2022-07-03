@@ -6,6 +6,7 @@
     homeDirectory = "/home/mykiwi";
     # Specify packages not explicitly configured below
     packages = with pkgs; [
+      dasel
       fd
       httpie
       jq
