@@ -26,7 +26,7 @@
     bat = {
       enable = true;
       config = {
-        theme = "GitHub";
+        theme = "DarkNeon";
       };
     };
 
