@@ -179,7 +179,7 @@
 
     fzf = {
       enable = true;
-      enableFishIntegration = false;
+      enableFishIntegration = true;
     };
 
     gh = {
